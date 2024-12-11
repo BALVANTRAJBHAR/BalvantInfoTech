@@ -19,11 +19,41 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
 
+        /*header h1 {
+            margin: 0;
+        }*/
+
+
+/* Logo */
+.logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px; /* Adjust logo size */
+        }
+
+        /* Animated Tech Text */
         header h1 {
             margin: 0;
+            font-size: 48px;
+            color: rgb(221, 11, 11);
+            animation: fadeInScale 2s ease-out forwards;
         }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
 
         /* Navigation Bar Styles */
         nav {
@@ -47,6 +77,7 @@
         /* Main Section Styles */
         .main-section {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
             padding: 50px;
@@ -59,6 +90,7 @@
             background-color: #f1f1f1;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         .main-section h2 {
@@ -118,20 +150,40 @@
             font-size: 18px;
         }
 
+        /* Contact Info Card */
         .contact-info {
             font-size: 18px;
             padding: 50px;
             color: #555;
         }
 
-        .contact-info a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
         .contact-info h2 {
             text-align: center;
-            color: #333;
+            color: #03dd32;
+        }
+
+        .contact-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            margin: 10px 0;
+        }
+
+        .contact-card a {
+            color: #4CAF50;
+            text-decoration: none;
         }
 
         /* Privacy Section */
@@ -161,12 +213,61 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-section {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .contact-card {
+                width: 90%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 12px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header h2 {
+                font-size: 20px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
+        <img src="BTRlogo.png" alt="Tech Logo" class="logo"> <!-- Replace with your logo image -->
+        
         <h1>Balvant InfoTech</h1>
         <h2>Service-Based Software</h2>
         <p>Revolutionize your business with our cutting-edge software solutions</p>
@@ -219,16 +320,19 @@
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Balvant InfoTech</h2>
-        
-        <img src="abtus.jpg" alt="About Balvant InfoTech">
-        <!--<img src="https://via.placeholder.com/1200x500?text=About+Our+Software" alt="About BalvantTech">-->
+        <img src="abtus.jpg" alt="About Tech">
         <p>We are Balvant InfoTech, a leading provider of innovative software solutions. Our goal is to make your business operations more efficient and provide powerful tools for growth. With years of experience, we specialize in delivering high-quality software tailored to meet the needs of various industries.</p>
-        <div id="contact-info">
-            <h2>Contact us</h2>
-            <p><strong>Address:</strong> Delhi, India</p>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section id="contact-info" class="contact-info">
+        <h2>Contact Us</h2>
+        <div class="contact-card">
+            <h3>Get In Touch</h3>
+            <p><strong>Address:</strong> Jaunpur, UP, India</p>
             <p><strong>Phone:</strong> <a href="tel:+918874194178">+918874194178</a></p>
             <p><strong>Email:</strong> <a href="mailto:Officialbalvant@mail.com">Officialbalvant@mail.com</a></p>
-            <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@BalvantTrendyTech" target="_blank">youtube/BalvantTech</a></p>
+            <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@BalvantTrendyTech" target="_blank">youtube/Balvant InfoTech</a></p>
         </div>
     </section>
 
@@ -236,13 +340,12 @@
     <section id="privacy" class="privacy">
         <h2>Privacy Policy</h2>
         <p>Your privacy is important to us. We are committed to protecting your personal information and ensuring that it is used only in ways that benefit you. Our software complies with all relevant privacy laws and regulations, and we take necessary measures to safeguard your data.</p>
-        <p>By using our software, you consent to the collection and use of your data as described in our privacy policy. We do not sell your personal information to third parties, and we provide clear options for you to manage your data preferences.</p>
     </section>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Balvant InfoTech | All Rights Reserved</p>
-    </footer>
+    </footer> 
 
 </body>
 </html>
